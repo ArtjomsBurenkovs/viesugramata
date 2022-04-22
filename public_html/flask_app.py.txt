@@ -1,0 +1,18 @@
+
+# komentars
+
+from flask import Flask, render_template, redirect, request, url_for
+
+app = Flask(__name__)
+if request.method == "GET":
+   return render_template("main_page.html", comments=comments)
+comments.append(request.form["komentars"])
+return redirect(url_for('index'))
+
+@app.route('/pirmais')
+def hello_world():
+    return 'Hello from Flask!'
+
+@app.route('/', methods=["GET", "POST"])
+def index():
+    return render_template("main_page.html")
